@@ -48,6 +48,9 @@ jobs:
       - name: Load DLL and run APG reference case
         run: python scripts/smoke_test.py dist/iers2010.dll
 
+      - name: Verify IERS Fortran reference cases
+        run: python scripts/verify_examples.py dist/iers2010.dll
+
       - name: Upload Windows x64 DLL
         uses: actions/upload-artifact@v4
         with:
